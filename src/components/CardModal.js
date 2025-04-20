@@ -70,11 +70,15 @@ const CardModal = ({ card, onClose }) => {
               Tech Stack Used
             </h3>
             <div className="flex flex-wrap">
-              {technologiesUsed.split(", ").map((tech, index) => (
-                <div key={index} className="mb-1 mr-2">
-                  • {tech}
-                </div>
-              ))}
+            {(technologiesUsed ?? "")
+  .split(",")
+  .filter((tech) => tech.trim() !== "")
+  .map((tech, index) => (
+    <div key={index} className="mb-1 mr-2">
+      • {tech.trim()}
+    </div>
+        ))}
+
             </div>
           </div>
 

@@ -9,10 +9,10 @@
   <a href="https://reactjs.org/"><img alt="Made With React" src="https://img.shields.io/badge/made%20with-react-61DAFB?style=flat" /></a>
   <a href="https://github.com/Kiran1689" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/built_with-love-red" alt="built with love badge" /></a>
   <a href="https://github.com/Kiran1689" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/built_by-developers-yellow" alt="built by developers badge" /></a>
-  <a href="https://github.com/Kiran1689/Awesome-Dev-Portfolios" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/open-source-green" alt="open source badge" /></a>
+  <a href="https://github.com/patihrz/portofolio-patih" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/open-source-green" alt="open source badge" /></a>
 <br/>
   <a href="https://awesome-dev-portfolios.vercel.app/" target="_blank" rel="noopener noreferrer"><img src="https://img.shields.io/badge/check_it-out-blueviolet" alt="check it out badge" /></a>
-  <a href="https://github.com/Kiran1689/Awesome-Dev-Portfolios" target="_blank" rel="noopener noreferrer"><img src="https://therealsujitk-vercel-badge.vercel.app/?app=awesome-dev-portfolios" alt="Vercel Deploy"></a>
+  <a href="https://github.com/patihrz/portofolio-patih" target="_blank" rel="noopener noreferrer"><img src="https://therealsujitk-vercel-badge.vercel.app/?app=awesome-dev-portfolios" alt="Vercel Deploy"></a>
   <a href="http://badges.mit-license.org/"><img alt="License" src="http://img.shields.io/:license-mit-blue.svg?style=flat-square?style=flat-square" /></a>
   <a href="https://github.com/Kiran1689/Awesome-Dev-Portfolios/commits/main"><img alt="Maintenance" src="https://img.shields.io/badge/maintained-yes-orange.svg?style=flat" /></a>
   <a href="http://badges.mit-license.org/"><img alt="Website" src="https://img.shields.io/badge/website-up-yellow?style=flat" /></a>

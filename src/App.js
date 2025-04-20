@@ -17,19 +17,28 @@ const App = () => {
 
   useEffect(() => {
     const importAll = (context) => context.keys().map(context);
-    let cardData = importAll(
-      require.context("./profileData", false, /\.json$/)
-    );
+    let cardData = importAll(require.context("./profileData", false, /\.json$/));
 
-    // Sort cards alphabetically by name
-    cardData = cardData.sort((a, b) => {
-      const nameA = a.name.toUpperCase();
-      const nameB = b.name.toUpperCase();
-      return nameA.localeCompare(nameB);
-    });
+    // Format data untuk HeroParallax dan CardList
+    cardData = cardData.map((data) => ({
+      ...data,
+      name: data.name,
+      title: data.name,
+      link: data.livePortfolioLink || data.githubRepoLink,
+      thumbnail: data.image,
+    })).sort((a, b) =>
+      a.name.toUpperCase().localeCompare(b.name.toUpperCase())
+    );
 
     setCards(cardData);
   }, []);
+
+  useEffect(() => {
+    const filtered = cards.filter((card) =>
+      card.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredCards(filtered);
+  }, [searchTerm, cards]);
 
   const handleCardClick = (card) => {
     setSelectedCard(card);
@@ -39,48 +48,30 @@ const App = () => {
     setSelectedCard(null);
   };
 
-  useEffect(() => {
-    filterCards();
-    // eslint-disable-next-line
-  }, [cards, searchTerm]);
-
-  const filterCards = () => {
-    let filteredData = cards;
-
-    if (searchTerm) {
-      filteredData = filteredData.filter((card) =>
-        card.name.toLowerCase().includes(searchTerm.toLowerCase())
-      );
-    }
-    setFilteredCards(filteredData);
-  };
-
   return (
     <Router>
       <div className="app">
         <Routes>
           <Route path="/signup" element={<SignUp />} />
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home products={cards} />} />
           <Route
-            path="/portfolios"
-            element={
-              <>
-                <Navbar
-                  searchTerm={searchTerm}
-                  handleSearchChange={(event) =>
-                    setSearchTerm(event.target.value)
-                  }
-                />
-                <CardList
-                  cards={filteredCards}
-                  onCardClick={(card) => handleCardClick(card)}
-                />
-                <CardModal card={selectedCard} onClose={handleCloseModal} />
-                <ScrollToTopButton />
-                <Footer />
-              </>
-            }
-          />
+  path="/portfolios"
+  element={
+    <div className="flex flex-col min-h-screen">
+      <Navbar
+        searchTerm={searchTerm}
+        handleSearchChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <div className="flex-grow">
+        <CardList cards={filteredCards} onCardClick={handleCardClick} />
+        <CardModal card={selectedCard} onClose={handleCloseModal} />
+      </div>
+      <ScrollToTopButton />
+      <Footer />
+    </div>
+  }
+/>
+
         </Routes>
       </div>
     </Router>
