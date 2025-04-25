@@ -45,5 +45,4 @@ Website ini adalah bentuk dedikasi saya dalam dunia teknologi, serta menjadi eta
 
 - GitHub: [@patihrz](https://github.com/patihrz)
 - LinkedIn: [Patih Ramadika](https://linkedin.com/in/patih-ramadika-19b763217)
-- Email: [patih.emailkamu@gmail.com](mailto:patih.emailkamu@gmail.com)
 - Instagram: [@patihramadika](https://instagram.com/patihramadika)
